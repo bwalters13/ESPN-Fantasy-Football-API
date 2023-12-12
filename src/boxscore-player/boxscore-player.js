@@ -84,7 +84,7 @@ class BoxscorePlayer extends Player {
       manualParse: (responseData, data, rawData, constructorParams) => parsePlayerStats({
         responseData,
         constructorParams,
-        usesPoints: false,
+        usesPoints: true,
         statKey: 'stats',
         statSourceId: 1,
         statSplitTypeId: 1
