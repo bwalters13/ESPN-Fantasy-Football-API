@@ -87,6 +87,28 @@ class Client {
     });
   }
 
+  getMatchupScoreLite({ seasonId, matchupPeriodId, scoringPeriodId }) {
+    this.constructor._validateV3Params(
+      seasonId,
+      'getBoxscoreForWeek',
+      'getHistoricalScoreboardForWeek'
+    );
+
+    const route = this.constructor._buildRoute({
+      base: `${seasonId}/segments/0/leagues/${this.leagueId}`,
+      params: `?view=mMatchupScoreLite`
+    });
+
+    return axios.get(route, this._buildAxiosConfig()).then((response) => {
+      const schedule = _.get(response.data, 'schedule');
+      const data = _.filter(schedule, { matchupPeriodId });
+
+      return _.map(data, (matchup) => (
+        Boxscore.buildFromServer(matchup, { leagueId: this.leagueId, seasonId, scoringPeriodId })
+      ));
+    });
+  }
+
   /**
    * Returns all draft picks for a given season.
    *
