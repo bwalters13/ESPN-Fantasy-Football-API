@@ -37,7 +37,7 @@ class Boxscore extends BaseObject {
     homeScore: {
       key: 'home',
       manualParse: (responseData) => (
-        _.get(responseData, 'totalPointsLive') || _.get(responseData, 'totalPoints')
+        _.get(responseData, 'totalPointsLive') || _.get(responseData, 'totalPoints') || _.get(responseData, 'pointsByScoringPeriod')
       )
     },
     homeProjectedScore: 'home.totalProjectedPointsLive',
@@ -54,7 +54,7 @@ class Boxscore extends BaseObject {
     awayScore: {
       key: 'away',
       manualParse: (responseData) => (
-        _.get(responseData, 'totalPointsLive') || _.get(responseData, 'totalPoints')
+        _.get(responseData, 'totalPointsLive') || _.get(responseData, 'totalPoints') || _.get(responseData, 'pointsByScoringPeriod')
       )
     },
     awayProjectedScore: 'away.totalProjectedPointsLive',
