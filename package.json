@@ -29,7 +29,7 @@
     "lint": "npm run lint:js && npm run lint:spelling",
     "lint:js": "eslint integration-tests/**/*.js src/**/*.js --cache",
     "lint:spelling": "cspell integration-tests/**/*.js src/**/*.js --quiet --cache",
-    "prepublishOnly": "npm run build",
+    "prepare": "npm run build",
     "serve:docs": "npm run build:docs && http-server ./docs -c-1",
     "test": "jest --maxWorkers=2",
     "test:integration": "jest --maxWorkers=2 --config=jest-integration-tests.config.js"
