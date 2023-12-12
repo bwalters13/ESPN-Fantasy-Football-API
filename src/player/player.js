@@ -110,9 +110,9 @@ class Player extends BaseCacheableObject {
         _.get(slotCategoryIdToPositionMap, posId)
       ))
     },
-
     averageDraftPosition: 'averageDraftPosition',
     auctionValueAverage: 'auctionValueAverage',
+    locked: 'lineupLocked',
     percentChange: 'percentChange',
     percentStarted: 'percentStarted',
     percentOwned: 'percentOwned',
