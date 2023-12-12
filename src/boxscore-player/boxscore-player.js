@@ -41,7 +41,7 @@ class BoxscorePlayer extends Player {
       key: 'lineupSlotId',
       manualParse: (responseData) => _.get(slotCategoryIdToPositionMap, responseData)
     },
-    lineupLocked: {
+    locked: {
       key: 'lineupLocked',
       manualParse: (responseData, data, rawData) => rawData.playerPoolEntry.lineupLocked
     },
