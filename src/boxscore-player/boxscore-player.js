@@ -43,7 +43,7 @@ class BoxscorePlayer extends Player {
     },
     lineupLocked: {
       key: 'lineupLocked',
-      manualParse: (responseData) => rawData.playerPoolEntry.lineupLocked
+      manualParse: (responseData, data, rawData) => rawData.playerPoolEntry.lineupLocked
     },
     totalPoints: 'appliedStatTotal',
     pointBreakdown: {
