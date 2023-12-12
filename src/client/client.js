@@ -79,7 +79,7 @@ class Client {
 
     return axios.get(route, this._buildAxiosConfig()).then((response) => {
       const schedule = _.get(response.data, 'schedule');
-      const data = _.filter(schedule, { scoringPeriodId });
+      const data = _.filter(schedule, { matchupPeriodId });
 
       return _.map(data, (matchup) => (
         Boxscore.buildFromServer(matchup, { leagueId: this.leagueId, seasonId, scoringPeriodId })
