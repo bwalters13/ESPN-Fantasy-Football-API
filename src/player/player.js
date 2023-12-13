@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import BaseCacheableObject from '../base-classes/base-cacheable-object/base-cacheable-object.js';
+import { parsePlayerStats } from '../player-stats/player-stats';
 
 import {
   nflTeamIdToNFLTeam,
