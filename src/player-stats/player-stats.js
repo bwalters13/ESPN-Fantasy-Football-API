@@ -27,7 +27,8 @@ class PlayerStats extends BaseObject {
    * @type {ScoringItems}
    */
   static responseMap = {
-    ...scoringItemToId
+    ...scoringItemToId,
+    totalPoints: 'appliedTotal'
   };
 }
 
