@@ -104,6 +104,20 @@ class Player extends BaseCacheableObject {
       key: 'defaultPositionId',
       manualParse: (responseData) => _.get(slotCategoryIdToPositionMap, responseData)
     },
+    totalPoints: {
+      key: 'stats',
+      manualParse: (responseData, data, rawData, constructorParams) => parsePlayerStats({
+        responseData,
+        constructorParams,
+        usesPoints: true,
+        scoringPeriodId: this.scoringPeriodId,
+        seasonId: this.seasonId,
+        
+        statKey: 'appliedTotal',
+        statSourceId: 0,
+        statSplitTypeId: 1
+      })
+    },
     eligiblePositions: {
       key: 'eligibleSlots',
       manualParse: (responseData) => _.map(responseData, (posId) => (
