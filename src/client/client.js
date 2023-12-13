@@ -74,7 +74,7 @@ class Client {
 
     const route = this.constructor._buildRoute({
       base: `${seasonId}/segments/0/leagues/${this.leagueId}`,
-      params: `?view=mMatchup&view=mMatchupScore&view=mScoreboard&scoringPeriodId=${scoringPeriodId}`
+      params: `?view=mMatchup&view=mMatchupScore&view=mScoreboard&view=mMatchupScoreLite&scoringPeriodId=${scoringPeriodId}`
     });
 
     return axios.get(route, this._buildAxiosConfig()).then((response) => {
