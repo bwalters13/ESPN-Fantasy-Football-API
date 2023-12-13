@@ -42,6 +42,7 @@ class Boxscore extends BaseObject {
     },
     homeProjectedScore: 'home.totalProjectedPointsLive',
     homeTeamId: 'home.teamId',
+    homeWeekly: 'home.pointsByScoringPeriod',
     homeRoster: {
       key: 'home.rosterForCurrentScoringPeriod.entries',
       isArray: true,
@@ -57,7 +58,7 @@ class Boxscore extends BaseObject {
         _.get(responseData, 'totalPointsLive') || _.get(responseData, 'totalPoints')
       )
     },
-    awayWeekly: 'away.pointsByScoringPeriood',
+    awayWeekly: 'away.pointsByScoringPeriod',
     awayProjectedScore: 'away.totalProjectedPointsLive',
     awayTeamId: 'away.teamId',
     awayRoster: {
