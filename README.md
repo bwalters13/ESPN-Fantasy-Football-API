@@ -3,8 +3,14 @@
 
 [![CI](https://github.com/mkreiser/ESPN-Fantasy-Football-API/actions/workflows/ci.yml/badge.svg)](https://github.com/mkreiser/ESPN-Fantasy-Football-API/actions/workflows/ci.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/548bae8930b5efad0418/maintainability)](https://codeclimate.com/github/mkreiser/ESPN-Fantasy-Football-API/maintainability) [![codecov](https://codecov.io/gh/mkreiser/ESPN-Fantasy-Football-API/graph/badge.svg?token=eYPSrLsdXz)](https://codecov.io/gh/mkreiser/ESPN-Fantasy-Football-API) [![Known Vulnerabilities](https://snyk.io/test/github/mkreiser/ESPN-Fantasy-Football-API/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mkreiser/ESPN-Fantasy-Football-API?targetFile=package.json)
 
-
 A Javascript API client for both web and NodeJS that connects to the updated v3 ESPN fantasy football API. Available as an npm package.
+
+## Changes from original repo
+
+* Added weekly scores to getTeamsAtWeek and getBoxescoreForWeek for multi-week matchups
+* Added an attribute to Boxscore-Player to indicate whether or not the player is locked in the lineup
+* Filtered getBoxscoresForWeek on scoringPeriodId rather than matchupPeriodId (needed to do this for custom matchups where the matchupPeriodId doesnt reflect the desired matchup)
+* Added totalPoints key to player object to not have to calculate from the pointsBreakdown
 
 ## Features
 
