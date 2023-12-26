@@ -93,6 +93,17 @@ class BoxscorePlayer extends Player {
         statSourceId: 1,
         statSplitTypeId: 1
       })
+    },
+    projectedVariance: {
+      key: 'stats',
+      manualParse: (responseData, data, rawData, constructorParams) => parsePlayerStats({
+        responseData,
+        constructorParams,
+        usesPoints: false,
+        statKey: 'variance',
+        statSourceId: 1,
+        statSplitTypeId: 1
+      })
     }
   };
 }
