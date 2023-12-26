@@ -46,7 +46,10 @@ class BoxscorePlayer extends Player {
       manualParse: (responseData, data, rawData) => rawData.playerPoolEntry.lineupLocked
     },
     totalPoints: 'appliedStatTotal',
-    ceiling: 'appliedTotalCeiling',
+    ceiling: {
+      key: 'stats',
+      manualParse: (responseData) => _.find(responseData, {statSourceId: 1, statSplitTypeId: 1}).appliedTotalCeiling
+    },
     pointBreakdown: {
       key: 'stats',
       manualParse: (responseData, data, rawData, constructorParams) => parsePlayerStats({
