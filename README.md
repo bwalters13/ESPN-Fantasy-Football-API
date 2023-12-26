@@ -9,7 +9,7 @@ A Javascript API client for both web and NodeJS that connects to the updated v3 
 
 * Added weekly scores to getTeamsAtWeek and getBoxescoreForWeek for multi-week matchups
 * Added an attribute to Boxscore-Player to indicate whether or not the player is locked in the lineup
-* Filtered getBoxscoresForWeek on scoringPeriodId rather than matchupPeriodId (needed to do this for custom matchups where the matchupPeriodId doesnt reflect the desired matchup)
+* Filtered getBoxscoresForWeek on scoringPeriodId rather than matchupPeriodId to account for custom playoff set up that causes actual matchups to span two matchup periods.
 * Added totalPoints key to player object to not have to calculate from the pointsBreakdown
 
 ## Features
